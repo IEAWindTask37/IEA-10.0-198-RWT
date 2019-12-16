@@ -17,4 +17,4 @@ If you use the wind turbine, please cite it like this:
     Url ={https://www.nrel.gov/docs/fy19osti/73492.pdf},
 	Year = {2019}}
 
-For questions, please ask to Frederik Zahle (frza@nrel.gov)
+For questions, please ask to Frederik Zahle (frza@dtu.dk)
