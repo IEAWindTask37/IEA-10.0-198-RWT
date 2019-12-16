@@ -9,7 +9,7 @@ A documentation is in progress describing in detail the .yaml file
 
 If you use the wind turbine, please cite it like this:
 
-@techreport{RWT,
+	@techreport{RWT,
 	Author = {Pietro Bortolotti and Helena Canet Tarres and Katherine Dykes and Karl Merz and Latha Sethuraman and David Verelst and Frederik Zahle},
 	Howpublished = {NREL/TP-73492},
 	Institution = {International Energy Agency},
