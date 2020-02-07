@@ -399,6 +399,8 @@ materials:
       rho: 1845
       E: [21.79e+009, 14.67e+009, 14.67e+009]
       G: [9.413e+009, 4.53864e+009, 4.53864e+009]
+      Xt: [600.0e+006, 600.0e+006, 600.0e+006]
+      Xc: [600.0e+006, 600.0e+006, 600.0e+006]
       nu: [0.478, 0.478, 0.478]
       unit_cost: 2.86
       waste: 0.15
@@ -411,6 +413,8 @@ materials:
       rho: 1845
       E: [13.92e+009, 13.92e+009, 13.92e+009]
       G: [11.5e+009, 4.53864e+009, 4.53864e+009]
+      Xt: [600.0e+006, 600.0e+006, 600.0e+006]
+      Xc: [600.0e+006, 600.0e+006, 600.0e+006]
       nu: [0.533, 0.533, 0.533]
       unit_cost: 3.00
       waste: 0.15
@@ -423,6 +427,8 @@ materials:
       rho: 1915.5
       E: [41.63e+009, 14.93e+009, 14.93e+009]
       G: [5.047e+009, 5.047e+009, 5.047e+009]
+      Xt: [600.0e+006, 600.0e+006, 600.0e+006]
+      Xc: [600.0e+006, 600.0e+006, 600.0e+006]
       nu: [0.241, 0.241, 0.241]
       unit_cost: 1.87
       waste: 0.05
@@ -452,8 +458,8 @@ materials:
       E: 210.e+006
       nu: 0.3
       alpha: 0.0
-      Xt: 355.e+006
-      Xc: 355.e+006 
+    #   Xt: 355.e+006
+    #   Xc: 355.e+006 
 
 assembly:
     turbine_class: I
@@ -470,6 +476,20 @@ control:
     tsr: 9. # 10.577 
     pitch: 0.0
     maxTS: 90.
+    max_pitch_rate: 0.17444444444444443 # 10 deg/s
+    max_torque_rate: 1500000.
+    # Controller parameters 
+    PC_zeta: 1.0                      # Pitch controller desired damping ratio [-]
+    PC_omega: 0.2                     # Pitch controller desired natural frequency [rad/s]
+    VS_zeta: 1.0                      # Torque controller desired damping ratio [-]
+    VS_omega: 0.2                     # Torque controller desired natural frequency [rad/s]
+    max_pitch: 1.57                   # Maximum pitch angle [rad], {default = 90 degrees}
+    min_pitch: 0                      # Minimum pitch angle [rad], {default = 0 degrees}
+    vs_minspd: 0                      # Minimum rotor speed [rad/s], {default = 0 rad/s}
+    ss_vsgain: 1                      # Torque controller setpoint smoother gain bias percentage [%, <= 1 ], {default = 100%}
+    ss_pcgain: .001                   # Pitch controller setpoint smoother gain bias percentage  [%, <= 1 ], {default = 0.1%}
+    ps_percent: 0.8                   # Percent peak shaving  [%, <= 1 ], {default = 80%}
+
 environment:
     air_density: 1.225
     air_dyn_viscosity: 1.81e-5
