@@ -1,5 +1,5 @@
 ------- InflowWind v3.01.* INPUT FILE -------------------------------------------------------------------------
-AeroElasticSE FAST driver
+Generated with AeroElasticSE FAST driver
 ---------------------------------------------------------------------------------------------------------------
 False                  Echo        - Echo input data to <RootName>.ech (flag)
 1                      WindType    - switch for wind file type (1=steady; 2=uniform; 3=binary TurbSim FF; 4=binary Bladed-style FF; 5=HAWC format; 6=User defined)
@@ -11,7 +11,7 @@ False                  Echo        - Echo input data to <RootName>.ech (flag)
 ================== Parameters for Steady Wind Conditions [used only for WindType = 1] =========================
 7.0                    HWindSpeed  - Horizontal windspeed                            (m/s)
 119.0                  RefHtT1     - Reference height for horizontal wind speed      (m)
-0.0                    PLexp       - Power law exponent                              (-)
+0.2                    PLexp       - Power law exponent                              (-)
 ================== Parameters for Uniform wind file   [used only for WindType = 2] ============================
 "./Wind/StepWind.wnd"  FilenameT2  - Filename of time series data for uniform wind field.      (-)
 119.0                  RefHtT2     - Reference height for horizontal wind speed                (m)

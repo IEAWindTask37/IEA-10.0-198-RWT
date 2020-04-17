@@ -1,5 +1,5 @@
 ------- OpenFAST INPUT FILE -------------------------------------------
-AeroElasticSE FAST driver
+Generated with AeroElasticSE FAST driver
 ---------------------- SIMULATION CONTROL --------------------------------------
 False                  Echo        - Echo input data to <RootName>.ech (flag)
 "FATAL"                AbortLevel  - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
@@ -10,14 +10,14 @@ False                  Echo        - Echo input data to <RootName>.ech (flag)
 99999.0                DT_UJac     - Time between calls to get Jacobians (s)
 1000000.0              UJacSclFact - Scaling factor used in Jacobians (-)
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
-1                      CompElast   - 
-1                      CompInflow  - 
-2                      CompAero    - 
-1                      CompServo   - 
-0                      CompHydro   - 
-0                      CompSub     - 
-0                      CompMooring - 
-0                      CompIce     - 
+1                      CompElast   - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades}
+1                      CompInflow  - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from OpenFOAM}
+2                      CompAero    - Compute aerodynamic loads (switch) {0=None; 1=AeroDyn v14; 2=AeroDyn v15}
+1                      CompServo   - Compute control and electrical-drive dynamics (switch) {0=None; 1=ServoDyn}
+0                      CompHydro   - Compute hydrodynamic loads (switch) {0=None; 1=HydroDyn}
+0                      CompSub     - Compute sub-structural dynamics (switch) {0=None; 1=SubDyn; 2=External Platform MCKF}
+0                      CompMooring - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
+0                      CompIce     - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
 ---------------------- INPUT FILES ---------------------------------------------
 "IEA-10.0-198-RWT_ElastoDyn.dat" EDFile      - Name of file containing ElastoDyn input parameters (quoted string)
 "iea10MW_BeamDyn.dat"  BDBldFile(1) - Name of file containing BeamDyn input parameters for blade 1 (quoted string)

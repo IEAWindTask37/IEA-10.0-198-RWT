@@ -1,5 +1,5 @@
 ------- AERODYN v15.03.* INPUT FILE ------------------------------------------------
-AeroElasticSE FAST driver
+Generated with AeroElasticSE FAST driver
 ======  General Options  ============================================================================
 False                  Echo        - Echo the input to "<rootname>.AD.ech"?  (flag)
 "default"              DTAero      - Time interval for aerodynamic calculations {or "default"} (s)
@@ -12,7 +12,7 @@ False                  FrozenWake  - Assume frozen wake during linearization? (f
 False                  CavitCheck  - Perform cavitation check? (flag) TRUE will turn off unsteady aerodynamics
 ======  Environmental Conditions  ===================================================================
  1.225000000000000e+00 AirDens     - Air density (kg/m^3)
- 1.479232653061225e-05 KinVisc     - Kinematic air viscosity (m^2/s)
+ 1.477551020408163e-05 KinVisc     - Kinematic air viscosity (m^2/s)
  3.350000000000000e+02 SpdSound    - Speed of sound (m/s)
  1.035000000000000e+05 Patm        - Atmospheric pressure (Pa) [used only when CavitCheck=True]
  1.700000000000000e+03 Pvap        - Vapour pressure of fluid (Pa) [used only when CavitCheck=True]
@@ -34,6 +34,7 @@ False                  TIDrag      - Include the drag term in the tangential-ind
 3                      UAMod       Unsteady Aero Model Switch (switch) {1=Baseline model (Original), 2=Gonzalez's variant (changes in Cn,Cc,Cm), 3=Minemma/Pierce variant (changes in Cc and Cm)} [used only when AFAeroMod=2]
 True                   FLookup     Flag to indicate whether a lookup for f' will be calculated (TRUE) or whether best-fit exponential equations will be used (FALSE); if FALSE S1-S4 must be provided in airfoil input files (flag) [used only when AFAeroMod=2]
 ======  Airfoil Information =========================================================================
+1                      AFTabMod    - Interpolation method for multiple airfoil tables {1=1D interpolation on AoA (first table only); 2=2D interpolation on AoA and Re; 3=2D interpolation on AoA and UserProp} (-)
 1                      InCol_Alfa  - The column in the airfoil tables that contains the angle of attack (-)
 2                      InCol_Cl    - The column in the airfoil tables that contains the lift coefficient (-)
 3                      InCol_Cd    - The column in the airfoil tables that contains the drag coefficient (-)
@@ -102,7 +103,7 @@ TwrElev        TwrDiam        TwrCd
 ======  Tower Influence and Aerodynamics ============================================================= [used only when TwrPotent/=0, TwrShadow=True, or TwrAero=True]
 False                  SumPrint    - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
 9                      NBlOuts     - Number of blade node outputs [0 - 9] (-)
-1, 5, 8, 13, 18, 23, 26, 28, 30 BlOutNd     - Blade nodes whose values will be output  (-)
+1, 4, 7, 13, 18, 23, 26, 28, 30 BlOutNd     - Blade nodes whose values will be output  (-)
 0                      NTwOuts     - Number of tower node outputs [0 - 9]  (-)
 1, 2, 3, 4, 5          TwOutNd     - Tower nodes whose values will be output  (-)
                    OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
