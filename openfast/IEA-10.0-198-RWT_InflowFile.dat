@@ -1,5 +1,5 @@
 ------- InflowWind v3.01.* INPUT FILE -------------------------------------------------------------------------
-Generated with AeroElasticSE FAST driver
+Generated with AeroElasticSE FAST driver. Hub Height for IEA-10.0-198-RWT: 115.63 + 2.96 + 10.039*sin(deg2rad(6)) = 119.6394 m. For reference, see Figure 37 from https://www.nrel.gov/docs/fy19osti/73492.pdf.
 ---------------------------------------------------------------------------------------------------------------
 False                  Echo        - Echo input data to <RootName>.ech (flag)
 1                      WindType    - switch for wind file type (1=steady; 2=uniform; 3=binary TurbSim FF; 4=binary Bladed-style FF; 5=HAWC format; 6=User defined)
@@ -7,15 +7,15 @@ False                  Echo        - Echo input data to <RootName>.ech (flag)
 1                      NWindVel    - Number of points to output the wind velocity    (0 to 9)
 0.0                    WindVxiList - List of coordinates in the inertial X direction (m)
 0.0                    WindVyiList - List of coordinates in the inertial Y direction (m)
-119.0                  WindVziList - List of coordinates in the inertial Z direction (m)
+119.6394               WindVziList - List of coordinates in the inertial Z direction (m)
 ================== Parameters for Steady Wind Conditions [used only for WindType = 1] =========================
 7.0                    HWindSpeed  - Horizontal windspeed                            (m/s)
-119.0                  RefHtT1     - Reference height for horizontal wind speed      (m)
-0.2                    PLexp       - Power law exponent                              (-)
+119.6394               RefHtT1     - Reference height for horizontal wind speed      (m)
+0.14                   PLexp       - Power law exponent                              (-)
 ================== Parameters for Uniform wind file   [used only for WindType = 2] ============================
 "./Wind/StepWind.wnd"  FilenameT2  - Filename of time series data for uniform wind field.      (-)
-119.0                  RefHtT2     - Reference height for horizontal wind speed                (m)
-180.0                  RefLength   - Reference length for linear horizontal and vertical sheer (-)
+119.6394               RefHtT2     - Reference height for horizontal wind speed                (m)
+198.0                  RefLength   - Reference length for linear horizontal and vertical sheer (-)
 ================== Parameters for Binary TurbSim Full-Field files   [used only for WindType = 3] ==============
 "./Wind/StepWind.wnd"  FilenameT3  - Name of the Full field wind file to use (.bts)
 ================== Parameters for Binary Bladed-style Full-Field files   [used only for WindType = 4] =========
@@ -31,7 +31,7 @@ False                  TowerFile   - Have tower file (.twr) (flag)
 16.0                   dx          - distance (in meters) between points in the x direction    (m)
 3.0                    dy          - distance (in meters) between points in the y direction    (m)
 3.0                    dz          - distance (in meters) between points in the z direction    (m)
-119.0                  RefHtT5     - reference height; the height (in meters) of the vertical center of the grid (m)
+119.6394               RefHtT5     - reference height; the height (in meters) of the vertical center of the grid (m)
 -------------   Scaling parameters for turbulence   ---------------------------------------------------------
 1                      ScaleMethod - Turbulence scaling method   [0 = none, 1 = direct scaling, 2 = calculate scaling factor based on a desired standard deviation]
 1.0                    SFx         - Turbulence scaling factor for the x direction (-)   [ScaleMethod=1]
@@ -48,5 +48,8 @@ False                  TowerFile   - Have tower file (.twr) (flag)
 ====================== OUTPUT ==================================================
 False                  SumPrint    - Print summary data to <RootName>.IfW.sum (flag)
 OutList      - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
+"Wind1VelX"               X-direction wind velocity at point WindList(1)
+"Wind1VelY"               Y-direction wind velocity at point WindList(1)
+"Wind1VelZ"               Z-direction wind velocity at point WindList(1)
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 ---------------------------------------------------------------------------------------
