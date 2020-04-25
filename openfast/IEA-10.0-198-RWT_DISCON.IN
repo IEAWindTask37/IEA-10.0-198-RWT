@@ -2,7 +2,7 @@
 !    - File written using ROSCO Controller tuning logic on 04/15/20
 
 !------- DEBUG ------------------------------------------------------------
-1                   ! LoggingLevel		- {0: write no debug files, 1: write standard output .dbg-file, 2: write standard output .dbg-file and complete avrSWAP-array .dbg2-file}
+0                   ! LoggingLevel		- {0: write no debug files, 1: write standard output .dbg-file, 2: write standard output .dbg-file and complete avrSWAP-array .dbg2-file}
 
 !------- CONTROLLER FLAGS -------------------------------------------------
 1                   ! F_LPFType			- {1: first-order low-pass filter, 2: second-order low-pass filter}, [rad/s] (currently filters generator speed and pitch control signals
@@ -76,7 +76,7 @@
 1.0                 ! WE_GearboxRatio	- Gearbox ratio [>=1],  [-]
 224511512.22407      ! WE_Jtot			- Total drivetrain inertia, including blades, hub and casted generator inertia to LSS, [kg m^2]
 1.225               ! WE_RhoAir			- Air density, [kg m^-3]
-"IEA-10.0-198-RWT_Cp_Ct_Cq.txt"      ! PerfFileName      - File containing rotor performance tables (Cp,Ct,Cq)
+"C:\IEA37_PROJECT\IEA-10.0-198-RWT_Cp_Ct_Cq.txt"      ! PerfFileName      - File containing rotor performance tables (Cp,Ct,Cq)
 50      50          ! PerfTableSize     - Size of rotor performance tables, first number refers to number of blade pitch angles, second number referse to number of tip-speed ratios
 42                  ! WE_FOPoles_N      - Number of first-order system poles used in EKF
 4.00 4.50 5.00 5.50 6.00 6.50 7.00 7.50 8.00 8.50 9.00 9.50 10.00 10.50 11.24 11.74 12.24 12.74 13.24 13.74 14.24 14.74 15.24 15.74 16.24 16.74 17.24 17.74 18.24 18.74 19.24 19.74 20.24 20.74 21.24 21.74 22.24 22.74 23.24 23.74 24.24 24.74               ! WE_FOPoles_v      - Wind speeds corresponding to first-order system poles [m/s]
