@@ -655,7 +655,7 @@ environment:
     shear_exp: 0.2
     water_density: 1025.0
     water_dyn_viscosity: 1.3351e-3
-    soil_shear_modulus: 140e6
+    soil_shear_modulus: 140.e+6
     soil_poisson: 0.4
 costs:
     wake_loss_factor: 0.15
