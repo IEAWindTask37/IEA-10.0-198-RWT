@@ -607,6 +607,7 @@ materials:
       rho: 1150.
       nu: 0.3
       orth: 0
+      unit_cost: 3.63
    -  name: steel
       description: Steel of the tower
       source: Standard steel with higher density to account for auxiliary systems of the tower (elevator, stairs, etc)
