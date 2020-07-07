@@ -368,7 +368,8 @@ components:
           drag_coefficient: 0.5
         drivetrain:
           gear_ratio: 1.
-          efficiency: 0.93
+          gearbox_efficiency: 1.0
+          generator_efficiency: 0.944
         elastic_properties_mb:
             above_yaw_mass: 545623.
             yaw_mass: 93457.
