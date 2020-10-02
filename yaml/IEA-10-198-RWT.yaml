@@ -357,6 +357,7 @@ components:
         elastic_properties_mb:
             system_mass: 81707
             system_inertia: [4.76512E+5, 0.0, 0.0, 0.0, 0.0, 0.0]
+            system_center_mass: [10.039, 0.0, 0.0]
     nacelle:
         outer_shape_bem:
           uptilt_angle: 0.10471975511965977 # 6 deg
@@ -648,7 +649,7 @@ control:
     vs_minspd: 0                      # Minimum rotor speed [rad/s], {default = 0 rad/s}
     ss_vsgain: 1                      # Torque controller setpoint smoother gain bias percentage [%, <= 1 ], {default = 100%}
     ss_pcgain: .001                   # Pitch controller setpoint smoother gain bias percentage  [%, <= 1 ], {default = 0.1%}
-    ps_percent: 0.8                   # Percent peak shaving  [%, <= 1 ], {default = 80%}
+    ps_percent: 0.9                  # Percent peak shaving  [%, <= 1 ], {default = 80%}
 
 environment:
     air_density: 1.225
