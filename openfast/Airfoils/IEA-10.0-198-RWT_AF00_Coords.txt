@@ -2,7 +2,7 @@
 ! ......... x-y coordinates are next if NumCoords > 0 .............
 ! x-y coordinate of airfoil reference
 !  x/c        y/c
- 1.000000       0
+ 0.500000       0
 ! coordinates of airfoil shape
 ! interpolation to 200 points
 !  x/c        y/c
