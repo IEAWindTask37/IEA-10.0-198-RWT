@@ -3,9 +3,9 @@ Generated with AeroElasticSE FAST driver
 ---------------------- SIMULATION CONTROL --------------------------------------
 False                  Echo        - Echo input data to "<RootName>.ech" (flag)
 3                      Method      - Integration method: {1: RK4, 2: AB4, or 3: ABM4} (-)
-"default"              DT          Integration time step (s)
+default                DT          Integration time step (s)
 ---------------------- ENVIRONMENTAL CONDITION ---------------------------------
-9.80665                Gravity     - Gravitational acceleration (m/s^2)
+9.81                   Gravity     - Gravitational acceleration (m/s^2)
 ---------------------- DEGREES OF FREEDOM --------------------------------------
 True                   FlapDOF1    - First flapwise blade mode DOF (flag)
 True                   FlapDOF2    - Second flapwise blade mode DOF (flag)
@@ -13,7 +13,7 @@ True                   EdgeDOF     - First edgewise blade mode DOF (flag)
 False                  TeetDOF     - Rotor-teeter DOF (flag) [unused for 3 blades]
 False                  DrTrDOF     - Drivetrain rotational-flexibility DOF (flag)
 True                   GenDOF      - Generator DOF (flag)
-True                   YawDOF      - Yaw DOF (flag)
+False                  YawDOF      - Yaw DOF (flag)
 True                   TwFADOF1    - First fore-aft tower bending-mode DOF (flag)
 True                   TwFADOF2    - Second fore-aft tower bending-mode DOF (flag)
 True                   TwSSDOF1    - First side-to-side tower bending-mode DOF (flag)
@@ -44,8 +44,8 @@ False                  PtfmYDOF    - Platform yaw rotation DOF (flag)
 0.0                    PtfmYaw     - Initial or fixed yaw rotational displacement of platform (degrees)
 ---------------------- TURBINE CONFIGURATION -----------------------------------
 3                      NumBl       - Number of blades (-)
-99.05499999999999      TipRad      - The distance from the rotor apex to the blade tip (meters)
-2.3                    HubRad      - The distance from the rotor apex to the blade root (meters)
+99.05794533999936      TipRad      - The distance from the rotor apex to the blade tip (meters)
+2.4                    HubRad      - The distance from the rotor apex to the blade root (meters)
 -4.0                   PreCone(1)  - Blade 1 cone angle (degrees)
 -4.0                   PreCone(2)  - Blade 2 cone angle (degrees)
 -4.0                   PreCone(3)  - Blade 3 cone angle (degrees) [unused for 2 blades]
@@ -84,7 +84,7 @@ False                  PtfmYDOF    - Platform yaw rotation DOF (flag)
 0.0                    PtfmPIner   - Platform inertia for pitch tilt rotation about the platform CM (kg m^2)
 0.0                    PtfmYIner   - Platform inertia for yaw rotation about the platform CM (kg m^2)
 ---------------------- BLADE ---------------------------------------------------
-51                     BldNodes    - Number of blade nodes (per blade) used for analysis (-)
+50                     BldNodes    - Number of blade nodes (per blade) used for analysis (-)
 "IEA-10.0-198-RWT_ElastoDyn_blade.dat" BldFile1    - Name of file containing properties for blade 1 (quoted string)
 "IEA-10.0-198-RWT_ElastoDyn_blade.dat" BldFile2    - Name of file containing properties for blade 2 (quoted string)
 "IEA-10.0-198-RWT_ElastoDyn_blade.dat" BldFile3    - Name of file containing properties for blade 3 (quoted string) [unused for 2 blades]
@@ -104,21 +104,21 @@ False                  PtfmYDOF    - Platform yaw rotation DOF (flag)
 9240560.0              DTTorDmp    - Drivetrain torsional damper (N-m/(rad/s))
 ---------------------- FURLING -------------------------------------------------
 False                  Furling     - Read in additional model properties for furling turbine (flag) [must currently be FALSE)
-"unused"               FurlFile    - Name of file containing furling properties (quoted string) [unused when Furling=False]
+"none"                 FurlFile    - Name of file containing furling properties (quoted string) [unused when Furling=False]
 ---------------------- TOWER ---------------------------------------------------
-19                     TwrNodes    - Number of tower nodes used for analysis (-)
+20                     TwrNodes    - Number of tower nodes used for analysis (-)
 "IEA-10.0-198-RWT_ElastoDyn_tower.dat" TwrFile     - Name of file containing tower properties (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
-True                   SumPrint    - Print summary data to "<RootName>.sum" (flag)
+False                  SumPrint    - Print summary data to "<RootName>.sum" (flag)
 1                      OutFile     - Switch to determine where output will be placed: {1: in module output file only; 2: in glue code output file only; 3: both} (currently unused)
 True                   TabDelim    - Use tab delimiters in text tabular output file? (flag) (currently unused)
 "ES10.3E2"             OutFmt      - Format used for text tabular output (except time).  Resulting field should be 10 characters. (quoted string) (currently unused)
 0.0                    TStart      - Time to begin tabular output (s) (currently unused)
 1                      DecFact     - Decimation factor for tabular output {1: output every time step} (-) (currently unused)
 0                      NTwGages    - Number of tower nodes that have strain gages for output [0 to 9] (-)
-          0   TwrGagNd    - List of tower nodes that have strain gages [1 to TwrNodes] (-) [unused if NTwGages=0] TwrGagNd    - List of tower nodes that have strain gages [1 to TwrNodes] (-) [unused if NTwGages=0] TwrGagNd    - List of tower nodes that have strain gages [1 to TwrNodes] (-) [unused if NTwGages=0] TwrGagNd    - List of tower nodes that have strain gages [1 to TwrNodes] (-) [unused if NTwGages=0] TwrGagNd    - List of tower nodes that have strain gages [1 to TwrNodes] (-) [unused if NTwGages=0] TwrGagNd    - List of tower nodes that have strain gages [1 to TwrNodes] (-) [unused if NTwGages=0]
-0                      NBlGages    - Number of blade nodes that have strain gages for output [0 to 9] (-)
-                       BldGagNd    - List of blade nodes that have strain gages [1 to BldNodes] (-) [unused if NBlGages=0]
+0                      TwrGagNd    - List of tower nodes that have strain gages [1 to TwrNodes] (-) [unused if NTwGages=0]
+9                      NBlGages    - Number of blade nodes that have strain gages for output [0 to 9] (-)
+6, 11, 16, 21, 26, 31, 36, 41, 46 BldGagNd    - List of blade nodes that have strain gages [1 to BldNodes] (-) [unused if NBlGages=0]
                    OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
 "Azimuth"
 "BldPitch1"

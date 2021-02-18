@@ -3,8 +3,8 @@ Generated with AeroElasticSE FAST driver
 ---------------------- SIMULATION CONTROL --------------------------------------
 False                  Echo        - Echo input data to <RootName>.ech (flag)
 "FATAL"                AbortLevel  - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
-30.0                   TMax        - Total run time (s)
-0.0125                 DT          - Recommended module time step (s)
+1.0                    TMax        - Total run time (s)
+0.01                   DT          - Recommended module time step (s)
 2                      InterpOrder - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
 0                      NumCrctn    - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
 99999.0                DT_UJac     - Time between calls to get Jacobians (s)
@@ -20,21 +20,21 @@ False                  Echo        - Echo input data to <RootName>.ech (flag)
 0                      CompIce     - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
 ---------------------- INPUT FILES ---------------------------------------------
 "IEA-10.0-198-RWT_ElastoDyn.dat" EDFile      - Name of file containing ElastoDyn input parameters (quoted string)
-"iea10MW_BeamDyn.dat"  BDBldFile(1) - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
-"iea10MW_BeamDyn.dat"  BDBldFile(2) - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
-"iea10MW_BeamDyn.dat"  BDBldFile(3) - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
+"none"                 BDBldFile(1) - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
+"none"                 BDBldFile(2) - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
+"none"                 BDBldFile(3) - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
 "IEA-10.0-198-RWT_InflowFile.dat" InflowFile  - Name of file containing inflow wind input parameters (quoted string)
 "IEA-10.0-198-RWT_AeroDyn15.dat" AeroFile    - Name of file containing aerodynamic input parameters (quoted string)
 "IEA-10.0-198-RWT_ServoDyn.dat" ServoFile   - Name of file containing control and electrical-drive input parameters (quoted string)
-"unused"               HydroFile   - Name of file containing hydrodynamic input parameters (quoted string)
-"unused"               SubFile     - Name of file containing sub-structural input parameters (quoted string)
-"unused"               MooringFile - Name of file containing mooring system input parameters (quoted string)
-"unused"               IceFile     - Name of file containing ice input parameters (quoted string)
+"none"                 HydroFile   - Name of file containing hydrodynamic input parameters (quoted string)
+"none"                 SubFile     - Name of file containing sub-structural input parameters (quoted string)
+"none"                 MooringFile - Name of file containing mooring system input parameters (quoted string)
+"none"                 IceFile     - Name of file containing ice input parameters (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
-True                   SumPrint    - Print summary data to "<RootName>.sum" (flag)
-2.0                    SttsTime    - Amount of time between screen status messages (s)
+False                  SumPrint    - Print summary data to "<RootName>.sum" (flag)
+10.0                   SttsTime    - Amount of time between screen status messages (s)
 99999.0                ChkptTime   - Amount of time between creating checkpoint files for potential restart (s)
-"default"              DT_Out      - Time step for tabular output (s) (or "default")
+default                DT_Out      - Time step for tabular output (s) (or "default")
 0.0                    TStart      - Time to begin tabular output (s)
 2                      OutFileFmt  - Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both}
 True                   TabDelim    - Use tab delimiters in text tabular output file? (flag) {uses spaces if false}
@@ -45,8 +45,8 @@ False                  CalcSteady  - Calculate a steady-state periodic operating
 3                      TrimCase    - Controller parameter to be trimmed {1:yaw; 2:torque; 3:pitch} [used only if CalcSteady=True] (-)
 0.001                  TrimTol     - Tolerance for the rotational speed convergence [used only if CalcSteady=True] (-)
 0.01                   TrimGain    - Proportional gain for the rotational speed error (>0) [used only if CalcSteady=True] (rad/(rad/s) for yaw or pitch; Nm/(rad/s) for torque)
-0                      Twr_Kdmp    - Damping factor for the tower [used only if CalcSteady=True] (N/(m/s))
-0                      Bld_Kdmp    - Damping factor for the blades [used only if CalcSteady=True] (N/(m/s))
+0.0                    Twr_Kdmp    - Damping factor for the tower [used only if CalcSteady=True] (N/(m/s))
+0.0                    Bld_Kdmp    - Damping factor for the blades [used only if CalcSteady=True] (N/(m/s))
 2                      NLinTimes   - Number of times to linearize (-) [>=1] [unused if Linearize=False]
 30.000000, 60.000000   LinTimes    - List of times at which to linearize (s) [1 to NLinTimes] [used only when Linearize=True and CalcSteady=False]
 1                      LinInputs   - Inputs included in linearization (switch) {0=none; 1=standard; 2=all module inputs (debug)} [unused if Linearize=False]
@@ -57,4 +57,4 @@ False                  LinOutMod   - Write module-level linearization output fil
 0                      WrVTK       - VTK visualization data output: (switch) {0=none; 1=initialization data only; 2=animation}
 2                      VTK_type    - Type of VTK visualization data: (switch) {1=surfaces; 2=basic meshes (lines/points); 3=all meshes (debug)} [unused if WrVTK=0]
 False                  VTK_fields  - Write mesh fields to VTK data files? (flag) {true/false} [unused if WrVTK=0]
-15.0                   VTK_fps     - Frame rate for VTK output (frames per second){will use closest integer multiple of DT} [used only if WrVTK=2]
+10.0                   VTK_fps     - Frame rate for VTK output (frames per second){will use closest integer multiple of DT} [used only if WrVTK=2]
