@@ -1,5 +1,5 @@
 ! Controller parameter input file for the WISDEM tuning wind turbine
-!    - File written using ROSCO Controller tuning logic on 02/18/21
+!    - File written using ROSCO version 2.2.0 controller tuning logic on 04/30/21
 
 !------- DEBUG ------------------------------------------------------------
 1                   ! LoggingLevel		- {0: write no debug files, 1: write standard output .dbg-file, 2: write standard output .dbg-file and complete avrSWAP-array .dbg2-file}
@@ -19,21 +19,21 @@
 0                   ! Flp_Mode          - Flap control mode {0: no flap control, 1: steady state flap angle, 2: Proportional flap control}
 
 !------- FILTERS ----------------------------------------------------------
-1.04243             ! F_LPFCornerFreq	- Corner frequency (-3dB point) in the low-pass filters, [rad/s]
-0.00000             ! F_LPFDamping		- Damping coefficient [used only when F_FilterType = 2]
-0.00000             ! F_NotchCornerFreq	- Natural frequency of the notch filter, [rad/s]
+1.05747             ! F_LPFCornerFreq	- Corner frequency (-3dB point) in the low-pass filters, [rad/s]
+0.00000             ! F_LPFDamping		- Damping coefficient {used only when F_FilterType = 2} [-]
+100.00000           ! F_NotchCornerFreq	- Natural frequency of the notch filter, [rad/s]
 0.00000   0.25000   ! F_NotchBetaNumDen	- Two notch damping values (numerator and denominator, resp) - determines the width and depth of the notch, [-]
 0.628320000000      ! F_SSCornerFreq    - Corner frequency (-3dB point) in the first order low pass filter for the setpoint smoother, [rad/s].
-0.00000   1.00000   ! F_FlCornerFreq    - Natural frequency and damping in the second order low pass filter of the tower-top fore-aft motion for floating feedback control [rad/s, -].
-0.90769   1.00000   ! F_FlpCornerFreq   - Corner frequency and damping in the second order low pass filter of the blade root bending moment for flap control [rad/s, -].
+0.20000   1.00000   ! F_FlCornerFreq    - Natural frequency and damping in the second order low pass filter of the tower-top fore-aft motion for floating feedback control [rad/s, -].
+0.91539   1.00000   ! F_FlpCornerFreq   - Corner frequency and damping in the second order low pass filter of the blade root bending moment for flap control [rad/s, -].
 
 !------- BLADE PITCH CONTROL ----------------------------------------------
-29                  ! PC_GS_n			- Amount of gain-scheduling table entries
--0.008396  0.061043  0.093570  0.118745  0.140512  0.159248  0.176694  0.192704  0.207930  0.222156  0.236104  0.248999  0.261852  0.274014  0.285831  0.297669  0.308749  0.319765  0.330789  0.341164  0.351539  0.361925  0.371766  0.381562  0.391379  0.400916  0.410263  0.419603  0.428862                ! PC_GS_angles	    - Gain-schedule table: pitch angles
--2.333710  -1.914967  -1.607272  -1.371621  -1.185365  -1.034445  -0.909678  -0.804807  -0.715425  -0.638335  -0.571167  -0.512119  -0.459803  -0.413131  -0.371235  -0.333418  -0.299113  -0.267851  -0.239245  -0.212970  -0.188753  -0.166360  -0.145594  -0.126282  -0.108278  -0.091454  -0.075695  -0.060906  -0.046998                ! PC_GS_KP		- Gain-schedule table: pitch controller kp gains
--0.233949  -0.198186  -0.171908  -0.151782  -0.135875  -0.122986  -0.112330  -0.103373  -0.095740  -0.089156  -0.083419  -0.078376  -0.073908  -0.069922  -0.066344  -0.063114  -0.060185  -0.057515  -0.055072  -0.052828  -0.050759  -0.048847  -0.047073  -0.045424  -0.043886  -0.042449  -0.041104  -0.039841  -0.038653                ! PC_GS_KI		- Gain-schedule table: pitch controller ki gains
-0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0                ! PC_GS_KD			- Gain-schedule table: pitch controller kd gains
-0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0                ! PC_GS_TF			- Gain-schedule table: pitch controller tf gains (derivative filter)
+28                  ! PC_GS_n			- Amount of gain-scheduling table entries
+0.094667  0.119032  0.140248  0.158480  0.175584  0.191164  0.206149  0.219995  0.233735  0.246317  0.258823  0.270900  0.282383  0.293885  0.304926  0.315637  0.326354  0.336704  0.346793  0.356888  0.366753  0.376273  0.385809  0.395352  0.404455  0.413543  0.422630  0.431503                ! PC_GS_angles	    - Gain-schedule table: pitch angles [rad].
+-1.472444  -1.284871  -1.130552  -1.001364  -0.891630  -0.797264  -0.715248  -0.643306  -0.579691  -0.523035  -0.472256  -0.426485  -0.385015  -0.347267  -0.312762  -0.281100  -0.251942  -0.225003  -0.200039  -0.176840  -0.155226  -0.135039  -0.116143  -0.098418  -0.081758  -0.066070  -0.051271  -0.037288                ! PC_GS_KP		- Gain-schedule table: pitch controller kp gains [s].
+-0.152476  -0.137646  -0.125444  -0.115230  -0.106554  -0.099093  -0.092608  -0.086920  -0.081891  -0.077411  -0.073396  -0.069778  -0.066499  -0.063514  -0.060786  -0.058283  -0.055977  -0.053847  -0.051874  -0.050039  -0.048331  -0.046734  -0.045240  -0.043839  -0.042522  -0.041281  -0.040111  -0.039006                ! PC_GS_KI		- Gain-schedule table: pitch controller ki gains [-].
+0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0                ! PC_GS_KD			- Gain-schedule table: pitch controller kd gains
+0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0                ! PC_GS_TF			- Gain-schedule table: pitch controller tf gains (derivative filter)
 1.570000000000      ! PC_MaxPit			- Maximum physical pitch limit, [rad].
 0.000000000000      ! PC_MinPit			- Minimum physical pitch limit, [rad].
 0.174440000000      ! PC_MaxRat			- Maximum pitch rate (in absolute value) in pitch controller, [rad/s].
@@ -54,14 +54,14 @@
 1500000.000000      ! VS_MaxRat			- Maximum torque rate (in absolute value) in torque controller, [Nm/s].
 12837855.11707      ! VS_MaxTq			- Maximum generator torque in Region 3 (HSS side), [Nm].
 0.000000000000      ! VS_MinTq			- Minimum generator (HSS side), [Nm].
-0.363070000000      ! VS_MinOMSpd		- Optimal mode minimum speed, cut-in speed towards optimal mode gain path, [rad/s]
-16378697.97525      ! VS_Rgn2K			- Generator torque constant in Region 2 (HSS side), [N-m/(rad/s)^2]
+0.628320000000      ! VS_MinOMSpd		- Optimal mode minimum speed, cut-in speed towards optimal mode gain path, [rad/s]
+16378697.97525      ! VS_Rgn2K			- Generator torque constant in Region 2 (HSS side), [Nm/(rad/s)^2]
 10000000.00000      ! VS_RtPwr			- Wind turbine rated power [W]
 11670777.37916      ! VS_RtTq			- Rated torque, [Nm].
 0.907670000000      ! VS_RefSpd			- Rated generator speed [rad/s]
 1                   ! VS_n				- Number of generator PI torque controller gains
--73772607.61100      ! VS_KP				- Proportional gain for generator PI torque controller [1/(rad/s) Nm]. (Only used in the transitional 2.5 region if VS_ControlMode =/ 2)
--8595483.39688      ! VS_KI				- Integral gain for generator PI torque controller [1/rad Nm]. (Only used in the transitional 2.5 region if VS_ControlMode =/ 2)
+-73421974.97682      ! VS_KP				- Proportional gain for generator PI torque controller [-]. (Only used in the transitional 2.5 region if VS_ControlMode =/ 2)
+-8604778.91140      ! VS_KI				- Integral gain for generator PI torque controller [s]. (Only used in the transitional 2.5 region if VS_ControlMode =/ 2)
 9.00                ! VS_TSRopt			- Power-maximizing region 2 tip-speed-ratio [rad].
 
 !------- SETPOINT SMOOTHER ---------------------------------------------
@@ -74,13 +74,13 @@
 0.0 0.0 0.0 0.0     ! WE_CP - Parameters that define the parameterized CP(lambda) function
 0.0          		! WE_Gamma			- Adaption gain of the wind speed estimator algorithm [m/rad]
 1.0                 ! WE_GearboxRatio	- Gearbox ratio [>=1],  [-]
-214887084.92212      ! WE_Jtot			- Total drivetrain inertia, including blades, hub and casted generator inertia to LSS, [kg m^2]
+215119472.78494      ! WE_Jtot			- Total drivetrain inertia, including blades, hub and casted generator inertia to LSS, [kg m^2]
 1.225               ! WE_RhoAir			- Air density, [kg m^-3]
 "IEA-10.0-198-RWT_Cp_Ct_Cq.txt"      ! PerfFileName      - File containing rotor performance tables (Cp,Ct,Cq)
 20      20          ! PerfTableSize     - Size of rotor performance tables, first number refers to number of blade pitch angles, second number referse to number of tip-speed ratios
-43                  ! WE_FOPoles_N      - Number of first-order system poles used in EKF
-4.00 4.50 5.00 5.50 6.00 6.50 7.00 7.50 8.00 8.50 9.00 9.50 10.00 10.50 10.88 11.38 11.88 12.38 12.88 13.38 13.88 14.38 14.88 15.38 15.88 16.38 16.88 17.38 17.88 18.38 18.88 19.38 19.88 20.38 20.88 21.38 21.88 22.38 22.88 23.38 23.88 24.38 24.88               ! WE_FOPoles_v      - Wind speeds corresponding to first-order system poles [m/s]
--0.02159668 -0.02429627 -0.02699585 -0.02969544 -0.03239502 -0.03509461 -0.03779419 -0.04049378 -0.04319336 -0.04589295 -0.04859254 -0.05129212 -0.05399171 -0.05669129 -0.05771455 -0.03510465 -0.03691298 -0.04274777 -0.04999422 -0.05903924 -0.06840001 -0.07864777 -0.08929632 -0.10056825 -0.11215405 -0.12433067 -0.13677033 -0.14959874 -0.16271311 -0.17628668 -0.18988929 -0.20395892 -0.21811869 -0.23243703 -0.24726962 -0.26263677 -0.27778383 -0.29287290 -0.30860570 -0.32432070 -0.34024244 -0.35682643 -0.37386504               ! WE_FOPoles        - First order system poles
+59                  ! WE_FOPoles_N      - Number of first-order system poles used in EKF
+4.00 4.24 4.47 4.71 4.95 5.19 5.42 5.66 5.90 6.14 6.37 6.61 6.85 7.09 7.32 7.56 7.80 8.03 8.27 8.51 8.75 8.98 9.22 9.46 9.70 9.93 10.17 10.41 10.65 10.88 11.37 11.86 12.34 12.83 13.32 13.80 14.29 14.78 15.26 15.75 16.24 16.72 17.21 17.70 18.18 18.67 19.16 19.65 20.13 20.62 21.11 21.59 22.08 22.57 23.05 23.54 24.03 24.51 25.00               ! WE_FOPoles_v      - Wind speeds corresponding to first-order system poles [m/s]
+-0.02157335 -0.02285331 -0.02413327 -0.02541322 -0.02669318 -0.02797314 -0.02925309 -0.03053305 -0.03181301 -0.03309296 -0.03437292 -0.03565288 -0.03693284 -0.03821279 -0.03949275 -0.04077271 -0.04205266 -0.04333262 -0.04461258 -0.04589253 -0.04717249 -0.04845245 -0.04973240 -0.05101236 -0.05229232 -0.05357227 -0.05485223 -0.05613219 -0.05741215 -0.05869210 -0.03475884 -0.03685096 -0.04260951 -0.04963385 -0.05841885 -0.06745284 -0.07736286 -0.08763258 -0.09853686 -0.10967860 -0.12146285 -0.13348919 -0.14581159 -0.15850759 -0.17153417 -0.18474031 -0.19821887 -0.21197274 -0.22580285 -0.23998252 -0.25465661 -0.26949353 -0.28421279 -0.29910401 -0.31463338 -0.32972466 -0.34541609 -0.36174869 -0.37811811               ! WE_FOPoles        - First order system poles [1/s]
 
 !------- YAW CONTROL ------------------------------------------------------
 0.0                 ! Y_ErrThresh		- Yaw error threshold. Turbine begins to yaw when it passes this. [rad^2 s]
@@ -91,8 +91,8 @@
 0.0                 ! Y_IPC_omegaLP		- Low-pass filter corner frequency for the Yaw-by-IPC controller to filtering the yaw alignment error, [rad/s].
 0.0                 ! Y_IPC_zetaLP		- Low-pass filter damping factor for the Yaw-by-IPC controller to filtering the yaw alignment error, [-].
 0.0                 ! Y_MErrSet			- Yaw alignment error, set point [rad]
-0.0                 ! Y_omegaLPFast		- Corner frequency fast low pass filter, 1.0 [Hz]
-0.0                 ! Y_omegaLPSlow		- Corner frequency slow low pass filter, 1/60 [Hz]
+0.0                 ! Y_omegaLPFast		- Corner frequency fast low pass filter, 1.0 [rad/s]
+0.0                 ! Y_omegaLPSlow		- Corner frequency slow low pass filter, 1/60 [rad/s]
 0.0                 ! Y_Rate			- Yaw rate [rad/s]
 
 !------- TOWER FORE-AFT DAMPING -------------------------------------------
@@ -101,12 +101,12 @@
 0.0                 ! FA_IntSat			- Integrator saturation (maximum signal amplitude contribution to pitch from FA damper), [rad]
 
 !------- MINIMUM PITCH SATURATION -------------------------------------------
-43                  ! PS_BldPitchMin_N  - Number of values in minimum blade pitch lookup table (should equal number of values in PS_WindSpeeds and PS_BldPitchMin)
-4.00 4.50 5.00 5.50 6.00 6.50 7.00 7.50 8.00 8.50 9.00 9.50 10.00 10.50 10.88 11.38 11.88 12.38 12.88 13.38 13.88 14.38 14.88 15.38 15.88 16.38 16.88 17.38 17.88 18.38 18.88 19.38 19.88 20.38 20.88 21.38 21.88 22.38 22.88 23.38 23.88 24.38 24.88               ! PS_WindSpeeds     - Wind speeds corresponding to minimum blade pitch angles [m/s]
-0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.02416648 0.02410199 0.03810529 0.05117395 0.06360521 0.07555877 0.08713729 0.09842372 0.10968934 0.12092921 0.13009434 0.14014603 0.14833749 0.16449114 0.16992710 0.18767192 0.20455182 0.19874094 0.22203041 0.10696320 0.21877267 0.24595045 0.16678606 0.22903719 0.26480222 0.37118609 0.23765902 0.28340826 0.31422465 0.09627164               ! PS_BldPitchMin    - Minimum blade pitch angles [rad]
+59                  ! PS_BldPitchMin_N  - Number of values in minimum blade pitch lookup table (should equal number of values in PS_WindSpeeds and PS_BldPitchMin)
+4.0000 4.2373 4.4746 4.7120 4.9493 5.1866 5.4239 5.6613 5.8986 6.1359 6.3732 6.6105 6.8479 7.0852 7.3225 7.5598 7.7971 8.0345 8.2718 8.5091 8.7464 8.9838 9.2211 9.4584 9.6957 9.9330 10.1704 10.4077 10.6450 10.8823 11.3691 11.8560 12.3428 12.8296 13.3164 13.8032 14.2900 14.7769 15.2637 15.7505 16.2373 16.7241 17.2109 17.6978 18.1846 18.6714 19.1582 19.6450 20.1318 20.6187 21.1055 21.5923 22.0791 22.5659 23.0527 23.5396 24.0264 24.5132 25.0000               ! PS_WindSpeeds     - Wind speeds corresponding to minimum blade pitch angles [m/s]
+0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00516014 0.01859227 0.03045267 0.02461636 0.03784671 0.05029862 0.06221854 0.07372651 0.08495479 0.09910033 0.10645756 0.11559974 0.00000000 0.13738694 0.15381480 0.16433081 0.16169485 0.18347517 0.13358320 0.18260500 0.21240765 0.18076968 0.17657912 0.21642466 0.25413896 0.25676874 0.22544859 0.25197399 0.17588187 0.25575283 0.25716850 0.25772382               ! PS_BldPitchMin    - Minimum blade pitch angles [rad]
 
 !------- SHUTDOWN -----------------------------------------------------------
-0.528860000000      ! SD_MaxPit         - Maximum blade pitch angle to initiate shutdown, [rad]
+0.531500000000      ! SD_MaxPit         - Maximum blade pitch angle to initiate shutdown, [rad]
 0.418880000000      ! SD_CornerFreq     - Cutoff Frequency for first order low-pass filter for blade pitch angle, [rad/s]
 
 !------- Floating -----------------------------------------------------------
@@ -115,5 +115,5 @@
 !------- FLAP ACTUATION -----------------------------------------------------
 0.000000000000      ! Flp_Angle         - Initial or steady state flap angle [rad]
 0.00000000e+00      ! Flp_Kp            - Blade root bending moment proportional gain for flap control [s]
-0.00000000e+00      ! Flp_Ki            - Flap displacement integral gain for flap control [s]
+0.00000000e+00      ! Flp_Ki            - Flap displacement integral gain for flap control [-]
 0.000000000000      ! Flp_MaxPit        - Maximum (and minimum) flap pitch angle [rad]
