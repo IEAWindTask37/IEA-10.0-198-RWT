@@ -68,8 +68,8 @@ begin new_htc_structure;
     ;                    1        2         3         4         5              6              7              8
     ;                            dx        dy        dz      mass            Ixx            Iyy            Izz
     concentrated_mass    1    0.000     0.000    -0.397     93457    1.65992E+05    1.64950E+05    2.83202E+05; Yaw bearing
-    concentrated_mass    3    0.000    -1.894    -0.204    109450    2.12563E+06    3.20078E+05    1.04726E+06; Nacelle turret and nose
-    concentrated_mass    3    0.000    -5.679    -0.497    187673    1.01895E+07    3.74518E+06    7.96002E+06; Inner generator stator
+    concentrated_mass    3    0.000    -1.894    -0.204    109450    6.37319E+05    3.15523E+05    6.54637E+05; Nacelle turret and nose
+    concentrated_mass    3    0.000    -5.679    -0.497    187673    1.89397E+06    3.69882E+06    1.90736E+06; Inner generator stator
     begin timoschenko_input;
       filename ./data/iea10mw_rc1_hawc2_towertop_st.dat;
       set 1 2 ;
@@ -99,9 +99,9 @@ begin new_htc_structure;
     ;
     ; FOR SUBSET 3
     ;                            dx        dy       dz      mass            Ixx            Iyy            Izz
-    concentrated_mass    5    0.000     0.000    0.279    169606    9.46827E+06    2.03071E+06    3.80170E+06; Outer generator rotor
-    concentrated_mass   10    0.000     0.000    0.020     81707    9.89248E+06    4.84305E+05    4.76512E+05; Hub
-;    concentrated_mass    5    0.000     0.000    0.000    169606    0.00000E+00    0.00000E+00    3.80170E+06; Outer generator rotor
+    concentrated_mass    5    0.000     0.000    0.279    169606    2.00332E+06    2.01716E+06    3.80159E+06; Outer generator rotor
+    concentrated_mass   10    0.000     0.000    0.020     81707    4.84477E+05    4.84272E+05    4.76512E+05; Hub
+;    concentrated_mass    5    0.000     0.000    0.000    169606    0.00000E+00    0.00000E+00    3.80159E+06; Outer generator rotor
 ;    concentrated_mass   10    0.000     0.000    0.000     81707    0.00000E+00    0.00000E+00    4.76512E+05; Hub
     begin c2_def;              Definition of centerline (main_body coordinates)
       nsec 10;
