@@ -1,3 +1,5 @@
+[![Build Status](https://app.travis-ci.com/IEAWindTask37/IEA-10.0-198-RWT.svg?branch=master)](https://travis-ci.com/IEAWindTask37/IEA-10.0-198-RWT)
+
 # IEA-10.0-198-RWT
 This repository contains the model data of the offshore reference wind turbine developed within IEA Wind Task 37. 
 
