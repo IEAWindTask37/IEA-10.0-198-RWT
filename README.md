@@ -21,4 +21,6 @@ If you use the wind turbine, please cite it like this:
     Url ={https://www.nrel.gov/docs/fy19osti/73492.pdf},
 	Year = {2019}}
 
-For questions, please ask to Pietro Bortolotti (pietro.bortolotti@nrel.gov)
+The Orcina team have created a model of the IEA-10.0-198-RWT using OrcaFlex. The model is publicly available at this link [OrcaFlex implementation](https://www.orcina.com/resources/examples/?key=k) and can be loaded in the [demo version of OrcaFlex](https://www.orcina.com/orcaflex/demo/). The included PDF document provides further details about the model.
+
+For questions not answered here, please ask to Pietro Bortolotti (pietro.bortolotti@nrel.gov)
