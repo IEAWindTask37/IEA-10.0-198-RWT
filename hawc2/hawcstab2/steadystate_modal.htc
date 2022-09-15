@@ -339,9 +339,9 @@ begin hawcstab2;
     main_body blade1;
     second_order_actuator pitch1 1.000000e+01 9.000000e-01;
   end rotating_threebladed_substructure;
+  operational_data_filename data/data19.opt;
 ;  operational_data_filename data/data26_windonly.opt;
 ;  operational_data_filename hawcstab2/opt_oper_hs2/opt_oper_hs2.opt;
-  operational_data_filename hawcstab2/opt_oper_hs2/opt_oper_hs2.opt;
   begin operational_data;
     windspeed 4.0 25.0 22 ; cut-in [m/s], cut-out [m/s], points [-]
     genspeed 6.000000 8.684032 ; [rpm]
@@ -351,7 +351,7 @@ begin hawcstab2;
     maxpow 1.063830e+04 ; [kW]
     prvs_turbine 1 ; 0: fixed pitch, 1: variable pitch controll [-]
     include_torsiondeform 1 ; [-];
-    operational_data_file_wind 1; 0: use windspeed from block, 1: use operational_data_filename
+    operational_data_file_wind 1; 0: use windspeed from block, 1: use operational data file
   end operational_data;
   ;                           1=Kp_partial      2=Ki_partial   3=kopt_partial           4=kp_full           5=Ki_full          6=K1_theta 7=K2_theta   8=omega_fil 9=dampr_fil 10=ff-dt-freq 11=type   12=K0_omega                13             14
   basic_dtu_we_controller 37269100.0  3345270.0  7673240.0  1.12535  0.123086  11.79164  616.29907  0.4       0.7  1.25 1  0.0283051  -2.23193  -13.74545;
