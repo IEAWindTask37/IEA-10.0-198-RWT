@@ -3,9 +3,7 @@ Generated with AeroElasticSE FAST driver
 ---------------------- SIMULATION CONTROL --------------------------------------
 False                  Echo        - Echo input data to "<RootName>.ech" (flag)
 3                      Method      - Integration method: {1: RK4, 2: AB4, or 3: ABM4} (-)
-default                DT          Integration time step (s)
----------------------- ENVIRONMENTAL CONDITION ---------------------------------
-9.81                   Gravity     - Gravitational acceleration (m/s^2)
+Default                DT          Integration time step (s)
 ---------------------- DEGREES OF FREEDOM --------------------------------------
 True                   FlapDOF1    - First flapwise blade mode DOF (flag)
 True                   FlapDOF2    - Second flapwise blade mode DOF (flag)
@@ -27,12 +25,12 @@ False                  PtfmYDOF    - Platform yaw rotation DOF (flag)
 ---------------------- INITIAL CONDITIONS --------------------------------------
 0.0                    OoPDefl     - Initial out-of-plane blade-tip displacement (meters)
 0.0                    IPDefl      - Initial in-plane blade-tip deflection (meters)
-0.0                    BlPitch(1)  - Blade 1 initial pitch (degrees)
-0.0                    BlPitch(2)  - Blade 2 initial pitch (degrees)
-0.0                    BlPitch(3)  - Blade 3 initial pitch (degrees) [unused for 2 blades]
+0.017453292519943295   BlPitch(1)  - Blade 1 initial pitch (degrees)
+0.017453292519943295   BlPitch(2)  - Blade 2 initial pitch (degrees)
+0.017453292519943295   BlPitch(3)  - Blade 3 initial pitch (degrees) [unused for 2 blades]
 0.0                    TeetDefl    - Initial or fixed teeter angle (degrees) [unused for 3 blades]
 0.0                    Azimuth     - Initial azimuth angle for blade 1 (degrees)
-7.0                    RotSpeed    - Initial or fixed rotor speed (rpm)
+5.0                    RotSpeed    - Initial or fixed rotor speed (rpm)
 0.0                    NacYaw      - Initial or fixed nacelle-yaw angle (degrees)
 0.0                    TTDspFA     - Initial fore-aft tower-top displacement (meters)
 0.0                    TTDspSS     - Initial side-to-side tower-top displacement (meters)
@@ -49,20 +47,20 @@ False                  PtfmYDOF    - Platform yaw rotation DOF (flag)
 -4.0                   PreCone(1)  - Blade 1 cone angle (degrees)
 -4.0                   PreCone(2)  - Blade 2 cone angle (degrees)
 -4.0                   PreCone(3)  - Blade 3 cone angle (degrees) [unused for 2 blades]
-0.349                  HubCM       - Distance from rotor apex to hub mass [positive downwind] (meters)
+0.0                    HubCM       - Distance from rotor apex to hub mass [positive downwind] (meters)
 0.0                    UndSling    - Undersling length [distance from teeter pin to the rotor apex] (meters) [unused for 3 blades]
 0.0                    Delta3      - Delta-3 angle for teetering rotors (degrees) [unused for 3 blades]
 0.0                    AzimB1Up    - Azimuth value to use for I/O when blade 1 points up (degrees)
--10.039                OverHang    - Distance from yaw axis to rotor apex [3 blades] or teeter pin [2 blades] (meters)
-3.55                   ShftGagL    - Distance from rotor apex [3 blades] or teeter pin [2 blades] to shaft strain gages [positive for upwind rotors] (meters)
+-10.09429761853814     OverHang    - Distance from yaw axis to rotor apex [3 blades] or teeter pin [2 blades] (meters)
+0.0                    ShftGagL    - Distance from rotor apex [3 blades] or teeter pin [2 blades] to shaft strain gages [positive for upwind rotors] (meters)
 -6.0                   ShftTilt    - Rotor shaft tilt angle (degrees)
--4.84                  NacCMxn     - Downwind distance from the tower-top to the nacelle CM (meters)
-0.0                    NacCMyn     - Lateral  distance from the tower-top to the nacelle CM (meters)
-3.39                   NacCMzn     - Vertical distance from the tower-top to the nacelle CM (meters)
--3.09528               NcIMUxn     - Downwind distance from the tower-top to the nacelle IMU (meters)
+-5.898043253994206     NacCMxn     - Downwind distance from the tower-top to the nacelle CM (meters)
+-0.0831024171092378    NacCMyn     - Lateral  distance from the tower-top to the nacelle CM (meters)
+2.5303340826388276     NacCMzn     - Vertical distance from the tower-top to the nacelle CM (meters)
+0.0                    NcIMUxn     - Downwind distance from the tower-top to the nacelle IMU (meters)
 0.0                    NcIMUyn     - Lateral  distance from the tower-top to the nacelle IMU (meters)
-2.23336                NcIMUzn     - Vertical distance from the tower-top to the nacelle IMU (meters)
-2.96                   Twr2Shft    - Vertical distance from the tower-top to the rotor shaft (meters)
+0.0                    NcIMUzn     - Vertical distance from the tower-top to the nacelle IMU (meters)
+2.3148585821678784     Twr2Shft    - Vertical distance from the tower-top to the rotor shaft (meters)
 115.63                 TowerHt     - Height of tower above ground level [onshore] or MSL [offshore] (meters)
 0.0                    TowerBsHt   - Height of tower base above ground level [onshore] or MSL [offshore] (meters)
 0.0                    PtfmCMxt    - Downwind distance from the ground level [onshore] or MSL [offshore] to the platform CM (meters)

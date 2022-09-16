@@ -849,7 +849,19 @@ materials:
       component_id: 4
    -  {name: balsa, orth: 0, rho: 110, E: 50000000.0, G: 16700000.0, nu: 0.5, component_id: 1, waste: 0.2, unit_cost: 13, ply_t: 0.0025}
    -  {name: resin, description: epoxy, E: 1000000.0, rho: 1150.0, nu: 0.3, orth: 0, unit_cost: 3.63}
-   -  {name: steel, description: Steel of the tower, source: 'Standard steel with higher density to account for auxiliary systems of the tower (elevator, stairs, etc)', orth: 0, rho: 8500, E: 210000000000.0, nu: 0.3, alpha: 0.0, Xy: 450000000.0}
+   -  {name: steel, description: Steel of the tower, source: 'Standard steel with higher density to account for auxiliary systems of the tower (elevator, stairs, etc)', orth: 0, rho: 8500, E: 210000000000.0, nu: 0.3, alpha: 0.0, Xy: 450000000.0, Xt: 355.e+006, Xc: 355.e+006}
+   -  name: adhesive
+      description: Adhesive from ...
+      source: Material coming from ...
+      orth: 0
+      rho: 1100
+      E: 4.56e+006
+      nu: 0.49
+      alpha: 0.0
+      Xt: 0.69e+006
+      Xc: 0.4e+006
+      S: 0.31e+006
+      G: 1520000.0
 control:
     supervisory: {Vin: 4.0, Vout: 25.0, maxTS: 90.0}
     pitch: {PC_zeta: 1.0, PC_omega: 0.2, ps_percent: 0.9, max_pitch: 1.57, max_pitch_rate: 0.17444444444444443, min_pitch: 0.0}

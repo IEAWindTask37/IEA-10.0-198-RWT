@@ -52,16 +52,27 @@ True                   GenTiStp    - Method to stop the generator {T: timed usin
 0                      YCMode      - Yaw control mode {0: none, 3: user-defined from routine UserYawCont, 4: user-defined from Simulink/Labview, 5: user-defined from Bladed-style DLL} (switch)
 99999.0                TYCOn       - Time to enable active yaw control (s) [unused when YCMode=0]
 0.0                    YawNeut     - Neutral yaw position--yaw spring force is zero at this yaw (degrees)
-9999999999.0           YawSpr      - Nacelle-yaw spring constant (N-m/rad)
-9999999999.0           YawDamp     - Nacelle-yaw damping constant (N-m/(rad/s))
+3844116827.995467      YawSpr      - Nacelle-yaw spring constant (N-m/rad)
+2458749.395891194      YawDamp     - Nacelle-yaw damping constant (N-m/(rad/s))
 99999.0                TYawManS    - Time to start override yaw maneuver and end standard yaw control (s)
 0.25                   YawManRat   - Yaw maneuver rate (in absolute value) (deg/s)
 0.0                    NacYawF     - Final yaw angle for override yaw maneuvers (degrees)
----------------------- TUNED MASS DAMPER ---------------------------------------
-False                  CompNTMD    - Compute nacelle tuned mass damper {true/false} (flag)
-"none"                 NTMDfile    - Name of the file for nacelle tuned mass damper (quoted string) [unused when CompNTMD is false]
-False                  CompTTMD    - Compute tower tuned mass damper {true/false} (flag)
-"none"                 TTMDfile    - Name of the file for tower tuned mass damper (quoted string) [unused when CompTTMD is false]
+---------------------- Aerodynamic Flow Control -------------------------------------
+0                      AfCmode     - Airfoil control mode {0- none, 1- cosine wave cycle, 4- user-defined from Simulink/Labview, 5- user-defined from Bladed-style DLL}
+0.0                    AfC_Mean    - Mean level for sinusoidal cycling or steady value (-) [used only with AfCmode==1]
+0.0                    AfC_Amp     - Amplitude for for cosine cycling of flap signal (AfC = AfC_Amp*cos(Azimuth+phase)+AfC_mean) (-) [used only with AfCmode==1]
+0.0                    AfC_phase   - Phase relative to the blade azimuth (0 is vertical) for for cosine cycling of flap signal (deg) [used only with AfCmode==1]
+---------------------- STRUCTURAL CONTROL ---------------------------------------
+0                      NumBStC     - Number of blade structural controllers (integer)
+"unused"               BStCfiles   - Name of the file for blade tuned mass damper (quoted string) [unused when CompNTMD is false]
+0                      NumNStC     - Number of nacelle structural controllers (integer)
+"unused"               NStCfiles   - Name of the file for nacelle tuned mass damper (quoted string) [unused when CompNTMD is false]
+0                      NumTStC     - Number of tower structural controllers (integer)
+""                     TStCfiles   - Name of the file for tower tuned mass damper (quoted string) [unused when CompNTMD is false]
+0                      NumSStC     - Number of sbustructure structural controllers (integer)
+""                     SStCfiles   - Name of the file for sbustructure tuned mass damper (quoted string) [unused when CompNTMD is false]
+---------------------- CABLE CONTROL ---------------------------------------- 
+0                      CCmode      - Cable control mode {0- none, 4- user-defined from Simulink/Labview, 5- user-defineAfC_phased from Bladed-style DLL}
 ---------------------- BLADED INTERFACE ---------------------------------------- [used only with Bladed Interface]
 "path2rosco/libdiscon.dylib" DLL_FileName - Name/location of the dynamic library {.dll [Windows] or .so [Linux]} in the Bladed-DLL format (-) [used only with Bladed Interface]
 "IEA-10.0-198-RWT_DISCON.IN" DLL_InFile  - Name of input file sent to the DLL (-) [used only with Bladed Interface]
