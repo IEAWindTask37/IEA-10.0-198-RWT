@@ -14,8 +14,8 @@ False                  Echo        - Echo input data to <RootName>.ech (flag)
 1                      CompInflow  - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from OpenFOAM}
 2                      CompAero    - Compute aerodynamic loads (switch) {0=None; 1=AeroDyn v14; 2=AeroDyn v15}
 1                      CompServo   - Compute control and electrical-drive dynamics (switch) {0=None; 1=ServoDyn}
-0                      CompHydro   - Compute hydrodynamic loads (switch) {0=None; 1=HydroDyn}
-0                      CompSub     - Compute sub-structural dynamics (switch) {0=None; 1=SubDyn; 2=External Platform MCKF}
+1                      CompHydro   - Compute hydrodynamic loads (switch) {0=None; 1=HydroDyn}
+1                      CompSub     - Compute sub-structural dynamics (switch) {0=None; 1=SubDyn; 2=External Platform MCKF}
 0                      CompMooring - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
 0                      CompIce     - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
 0                      MHK         - MHK turbine type (switch) {0=Not an MHK turbine; 1=Fixed MHK turbine; 2=Floating MHK turbine}
@@ -37,8 +37,8 @@ False                  Echo        - Echo input data to <RootName>.ech (flag)
 "IEA-10.0-198-RWT_InflowFile.dat" InflowFile  - Name of file containing inflow wind input parameters (quoted string)
 "IEA-10.0-198-RWT_AeroDyn15.dat" AeroFile    - Name of file containing aerodynamic input parameters (quoted string)
 "IEA-10.0-198-RWT_ServoDyn.dat" ServoFile   - Name of file containing control and electrical-drive input parameters (quoted string)
-"none"                 HydroFile   - Name of file containing hydrodynamic input parameters (quoted string)
-"none"                 SubFile     - Name of file containing sub-structural input parameters (quoted string)
+"IEA-10.0-198-RWT_HydroDyn.dat" HydroFile   - Name of file containing hydrodynamic input parameters (quoted string)
+"IEA-10.0-198-RWT_SubDyn.dat" SubFile     - Name of file containing sub-structural input parameters (quoted string)
 "none"                 MooringFile - Name of file containing mooring system input parameters (quoted string)
 "none"                 IceFile     - Name of file containing ice input parameters (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
