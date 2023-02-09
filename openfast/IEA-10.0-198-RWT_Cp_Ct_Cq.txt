@@ -1,12 +1,12 @@
 # ----- Rotor performance tables for the WEIS Turbine wind turbine ----- 
-# ------------ Written on Sep-16-22 using the ROSCO toolbox ------------ 
+# ------------ Written on Feb-09-23 using the ROSCO toolbox ------------ 
 
 # Pitch angle vector, 20 entries - x axis (matrix columns) (deg)
 -5.0   -3.158   -1.316   0.5263   2.368   4.211   6.053   7.895   9.737   11.58   13.42   15.26   17.11   18.95   20.79   22.63   24.47   26.32   28.16   30.0   
 # TSR vector, 20 entries - y axis (matrix rows) (-)
 2.0    2.526    3.053    3.579    4.105    4.632    5.158    5.684    6.211    6.737    7.263    7.789    8.316    8.842    9.368    9.895    10.42    10.95    11.47    12.0    
 # Wind speed vector - z axis (m/s)
-10.89    
+11.07    
 
 # Power coefficient
 

@@ -1,5 +1,5 @@
 ! Controller parameter input file for the WEIS Turbine wind turbine
-!    - File written using ROSCO version 2.6.0 controller tuning logic on 09/16/22
+!    - File written using ROSCO version 2.6.0 controller tuning logic on 02/09/23
 
 !------- DEBUG ------------------------------------------------------------
 1                   ! LoggingLevel		- {0: write no debug files, 1: write standard output .dbg-file, 2: LoggingLevel 1 + ROSCO LocalVars (.dbg2) 3: LoggingLevel 2 + complete avrSWAP-array (.dbg3)}
@@ -14,7 +14,7 @@
 1                   ! SS_Mode           - Setpoint Smoother mode {0: no setpoint smoothing, 1: introduce setpoint smoothing}
 2                   ! WE_Mode           - Wind speed estimator mode {0: One-second low pass filtered hub height wind speed, 1: Immersion and Invariance Estimator, 2: Extended Kalman Filter}
 1                   ! PS_Mode           - Pitch saturation mode {0: no pitch saturation, 1: implement pitch saturation}
-1                   ! SD_Mode           - Shutdown mode {0: no shutdown procedure, 1: pitch to max pitch at shutdown}
+0                   ! SD_Mode           - Shutdown mode {0: no shutdown procedure, 1: pitch to max pitch at shutdown}
 0                   ! Fl_Mode           - Floating specific feedback mode {0: no nacelle velocity feedback, 1: feed back translational velocity, 2: feed back rotational veloicty}
 0                   ! TD_Mode           - Tower damper mode {0: no tower damper, 1: feed back translational nacelle accelleration to pitch angle}
 0                   ! Flp_Mode          - Flap control mode {0: no flap control, 1: steady state flap angle, 2: Proportional flap control, 2: Cyclic (1P) flap control}
@@ -59,15 +59,15 @@
 0.0                 ! IPC_CornerFreqAct - Corner frequency of the first-order actuators model, to induce a phase lag in the IPC signal {0: Disable}, [rad/s]
 
 !------- VS TORQUE CONTROL ------------------------------------------------
-94.40000000000      ! VS_GenEff			- Generator efficiency mechanical power -> electrical power, [should match the efficiency defined in the generator properties!], [%]
-11670786.25396      ! VS_ArSatTq		- Above rated generator torque PI control saturation, [Nm]
+90.10872000000      ! VS_GenEff			- Generator efficiency mechanical power -> electrical power, [should match the efficiency defined in the generator properties!], [%]
+12226587.80858      ! VS_ArSatTq		- Above rated generator torque PI control saturation, [Nm]
 1500000.000000      ! VS_MaxRat			- Maximum torque rate (in absolute value) in torque controller, [Nm/s].
-12837864.87936      ! VS_MaxTq			- Maximum generator torque in Region 3 (HSS side), [Nm].
+13449246.58944      ! VS_MaxTq			- Maximum generator torque in Region 3 (HSS side), [Nm].
 0.000000000000      ! VS_MinTq			- Minimum generator torque (HSS side), [Nm].
 0.363070000000      ! VS_MinOMSpd		- Minimum generator speed [rad/s]
 15436567.62804      ! VS_Rgn2K			- Generator torque constant in Region 2 (HSS side), [Nm/(rad/s)^2]
 10000000.00000      ! VS_RtPwr			- Wind turbine rated power [W]
-11670786.25396      ! VS_RtTq			- Rated torque, [Nm].
+12226587.80858      ! VS_RtTq			- Rated torque, [Nm].
 0.907670000000      ! VS_RefSpd			- Rated generator speed [rad/s]
 1                   ! VS_n				- Number of generator PI torque controller gains
 -74749827.64378      ! VS_KP				- Proportional gain for generator PI torque controller [-]. (Only used in the transitional 2.5 region if VS_ControlMode =/ 2)

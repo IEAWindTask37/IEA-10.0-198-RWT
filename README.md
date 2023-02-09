@@ -9,7 +9,7 @@ The data include the OpenFAST and HAWC2 aeroelastic files, a .yaml file with the
 
 The documentation of the .yaml file is available at https://windio.readthedocs.io/en/latest/
 
-The OpenFAST model uses the ROSCO controller https://github.com/NREL/ROSCO 
+The OpenFAST model is up to date with release 3.4 and uses the develop branch of the ROSCO controller https://github.com/NREL/ROSCO (commit a1cf97bbebc47f117a67dad1e4d7044619854f92)
 
 If you use the wind turbine, please cite it like this:
 
